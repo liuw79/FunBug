@@ -18,6 +18,20 @@
 		01477EAC166B1C6D00A08D6C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01477EAB166B1C6D00A08D6C /* Default-568h@2x.png */; };
 		01477EAF166B1C6D00A08D6C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01477EAD166B1C6D00A08D6C /* MainStoryboard.storyboard */; };
 		01477EB2166B1C6D00A08D6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01477EB1166B1C6D00A08D6C /* ViewController.m */; };
+		01477EC2166B1CB900A08D6C /* beetle_dead.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 01477EB9166B1CB900A08D6C /* beetle_dead.mp3 */; };
+		01477EC3166B1CB900A08D6C /* bug.png in Resources */ = {isa = PBXBuildFile; fileRef = 01477EBA166B1CB900A08D6C /* bug.png */; };
+		01477EC4166B1CB900A08D6C /* door_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 01477EBB166B1CB900A08D6C /* door_bottom.png */; };
+		01477EC5166B1CB900A08D6C /* door_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 01477EBC166B1CB900A08D6C /* door_top.png */; };
+		01477EC6166B1CB900A08D6C /* fabric_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 01477EBD166B1CB900A08D6C /* fabric_bottom.png */; };
+		01477EC7166B1CB900A08D6C /* fabric_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 01477EBE166B1CB900A08D6C /* fabric_top.png */; };
+		01477EC8166B1CB900A08D6C /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 01477EBF166B1CB900A08D6C /* logo1.png */; };
+		01477EC9166B1CB900A08D6C /* plate_cheese.png in Resources */ = {isa = PBXBuildFile; fileRef = 01477EC0166B1CB900A08D6C /* plate_cheese.png */; };
+		01477ECA166B1CB900A08D6C /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 01477EC1166B1CB900A08D6C /* setting.png */; };
+		01477ECC166B239400A08D6C /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 01477ECB166B239400A08D6C /* logo1.png */; };
+		01477ED6166B2FD700A08D6C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01477ED5166B2FD700A08D6C /* QuartzCore.framework */; };
+		01477ED8166B310F00A08D6C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01477ED7166B310F00A08D6C /* AudioToolbox.framework */; };
+		01477EE2166B3AE800A08D6C /* SettingViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01477EE0166B3AE800A08D6C /* SettingViewViewController.m */; };
+		01477EE3166B3AE800A08D6C /* SettingViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01477EE1166B3AE800A08D6C /* SettingViewViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +51,21 @@
 		01477EAE166B1C6D00A08D6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		01477EB0166B1C6D00A08D6C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		01477EB1166B1C6D00A08D6C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		01477EB9166B1CB900A08D6C /* beetle_dead.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beetle_dead.mp3; sourceTree = "<group>"; };
+		01477EBA166B1CB900A08D6C /* bug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bug.png; sourceTree = "<group>"; };
+		01477EBB166B1CB900A08D6C /* door_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_bottom.png; sourceTree = "<group>"; };
+		01477EBC166B1CB900A08D6C /* door_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_top.png; sourceTree = "<group>"; };
+		01477EBD166B1CB900A08D6C /* fabric_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fabric_bottom.png; sourceTree = "<group>"; };
+		01477EBE166B1CB900A08D6C /* fabric_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fabric_top.png; sourceTree = "<group>"; };
+		01477EBF166B1CB900A08D6C /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
+		01477EC0166B1CB900A08D6C /* plate_cheese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plate_cheese.png; sourceTree = "<group>"; };
+		01477EC1166B1CB900A08D6C /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		01477ECB166B239400A08D6C /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
+		01477ED5166B2FD700A08D6C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		01477ED7166B310F00A08D6C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		01477EDF166B3AE800A08D6C /* SettingViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewViewController.h; sourceTree = "<group>"; };
+		01477EE0166B3AE800A08D6C /* SettingViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewViewController.m; sourceTree = "<group>"; };
+		01477EE1166B3AE800A08D6C /* SettingViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01477ED8166B310F00A08D6C /* AudioToolbox.framework in Frameworks */,
+				01477ED6166B2FD700A08D6C /* QuartzCore.framework in Frameworks */,
 				01477E96166B1C6D00A08D6C /* UIKit.framework in Frameworks */,
 				01477E98166B1C6D00A08D6C /* Foundation.framework in Frameworks */,
 				01477E9A166B1C6D00A08D6C /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +87,9 @@
 		01477E86166B1C6D00A08D6C = {
 			isa = PBXGroup;
 			children = (
+				01477ED7166B310F00A08D6C /* AudioToolbox.framework */,
+				01477ED5166B2FD700A08D6C /* QuartzCore.framework */,
+				01477ECB166B239400A08D6C /* logo1.png */,
 				01477E9B166B1C6D00A08D6C /* FunBug */,
 				01477E94166B1C6D00A08D6C /* Frameworks */,
 				01477E92166B1C6D00A08D6C /* Products */,
@@ -83,12 +117,16 @@
 		01477E9B166B1C6D00A08D6C /* FunBug */ = {
 			isa = PBXGroup;
 			children = (
+				01477EB8166B1CAA00A08D6C /* Resource */,
 				01477EA4166B1C6D00A08D6C /* AppDelegate.h */,
 				01477EA5166B1C6D00A08D6C /* AppDelegate.m */,
 				01477EAD166B1C6D00A08D6C /* MainStoryboard.storyboard */,
 				01477EB0166B1C6D00A08D6C /* ViewController.h */,
 				01477EB1166B1C6D00A08D6C /* ViewController.m */,
 				01477E9C166B1C6D00A08D6C /* Supporting Files */,
+				01477EDF166B3AE800A08D6C /* SettingViewViewController.h */,
+				01477EE0166B3AE800A08D6C /* SettingViewViewController.m */,
+				01477EE1166B3AE800A08D6C /* SettingViewViewController.xib */,
 			);
 			path = FunBug;
 			sourceTree = "<group>";
@@ -105,6 +143,22 @@
 				01477EAB166B1C6D00A08D6C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01477EB8166B1CAA00A08D6C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				01477EB9166B1CB900A08D6C /* beetle_dead.mp3 */,
+				01477EBA166B1CB900A08D6C /* bug.png */,
+				01477EBB166B1CB900A08D6C /* door_bottom.png */,
+				01477EBC166B1CB900A08D6C /* door_top.png */,
+				01477EBD166B1CB900A08D6C /* fabric_bottom.png */,
+				01477EBF166B1CB900A08D6C /* logo1.png */,
+				01477EBE166B1CB900A08D6C /* fabric_top.png */,
+				01477EC0166B1CB900A08D6C /* plate_cheese.png */,
+				01477EC1166B1CB900A08D6C /* setting.png */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +217,17 @@
 				01477EAA166B1C6D00A08D6C /* Default@2x.png in Resources */,
 				01477EAC166B1C6D00A08D6C /* Default-568h@2x.png in Resources */,
 				01477EAF166B1C6D00A08D6C /* MainStoryboard.storyboard in Resources */,
+				01477EC2166B1CB900A08D6C /* beetle_dead.mp3 in Resources */,
+				01477EC3166B1CB900A08D6C /* bug.png in Resources */,
+				01477EC4166B1CB900A08D6C /* door_bottom.png in Resources */,
+				01477EC5166B1CB900A08D6C /* door_top.png in Resources */,
+				01477EC6166B1CB900A08D6C /* fabric_bottom.png in Resources */,
+				01477EC7166B1CB900A08D6C /* fabric_top.png in Resources */,
+				01477EC8166B1CB900A08D6C /* logo1.png in Resources */,
+				01477EC9166B1CB900A08D6C /* plate_cheese.png in Resources */,
+				01477ECA166B1CB900A08D6C /* setting.png in Resources */,
+				01477ECC166B239400A08D6C /* logo1.png in Resources */,
+				01477EE3166B3AE800A08D6C /* SettingViewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +241,7 @@
 				01477EA2166B1C6D00A08D6C /* main.m in Sources */,
 				01477EA6166B1C6D00A08D6C /* AppDelegate.m in Sources */,
 				01477EB2166B1C6D00A08D6C /* ViewController.m in Sources */,
+				01477EE2166B3AE800A08D6C /* SettingViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
