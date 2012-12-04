@@ -27,7 +27,7 @@
 - (void)moveRight;
 - (void)turnLeft;
 - (void)moveLeft;
-
+- (IBAction)restart;
 - (IBAction)setSettings:(id)sender;
 
 @end
@@ -35,6 +35,18 @@
 @implementation ViewController
 
 bool bugDead;
+bool ifTurned;
+
+-(void)restart
+{
+    [self.bug setAlpha:100];
+    
+    bugDead = NO;
+    ifTurned = NO;
+
+    NSLog(@"Restart butten pressed.");
+    NSLog(@"bug pointer %p", self.bug);
+}
 
 -(void)setSettings:(id)sender
 {
@@ -74,8 +86,6 @@ bool bugDead;
                              [self.bug setAlpha:0];
                          }
                          completion:^(BOOL finished) {
-                             [self.bug release];
-                             self.bug = nil;
                          }];
     }
 }
@@ -88,6 +98,7 @@ static void SoundFinished(SystemSoundID soundID,void* sample){
 
 - (void)turnRight
 {
+    NSLog(@"turn Right began.");
     if (bugDead) {
         return;
     }
@@ -107,6 +118,10 @@ static void SoundFinished(SystemSoundID soundID,void* sample){
 
 - (void)moveRight
 {
+    NSLog(@"move Right began.");
+    NSLog(@"position x:%f, y:%f.", self.bug.frame.origin.x, self.bug.frame.origin.y);
+    NSLog(@"bugDead:%d", bugDead);
+    
     if (bugDead) {
         return;
     }
@@ -130,6 +145,7 @@ static void SoundFinished(SystemSoundID soundID,void* sample){
 
 - (void)turnLeft
 {
+    NSLog(@"turn left began.");
     if (bugDead) {
         return;
     }
@@ -149,6 +165,7 @@ static void SoundFinished(SystemSoundID soundID,void* sample){
 
 -(void)moveLeft
 {
+    NSLog(@"move left began.");
     if (bugDead) {
         return;
     }
@@ -177,8 +194,8 @@ static void SoundFinished(SystemSoundID soundID,void* sample){
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSLog(@"view will appear.");
     self.dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"dicSettings"];
-    NSLog(@"dic: %@", self.dic);
     
     bugDead = NO;
     
@@ -202,7 +219,6 @@ static void SoundFinished(SystemSoundID soundID,void* sample){
                          [self.doorBottom setFrame:bottomFrame];
                      }
                      completion:^(BOOL finished){
-                         NSLog(@"door opened.");
                      }];
     
     [UIView animateWithDuration:1.5
@@ -213,10 +229,12 @@ static void SoundFinished(SystemSoundID soundID,void* sample){
                          [self.tissueButtom setFrame:bottomTissueFrame];
                      }
                      completion:^(BOOL finished){
-                         NSLog(@"door opened.");
                      }];
     
-    [self turnRight];
+    if (!ifTurned) {
+        [self turnRight];
+        ifTurned = YES;
+    }
 }
 
 - (void)viewDidLoad
@@ -236,7 +254,7 @@ static void SoundFinished(SystemSoundID soundID,void* sample){
     [_doorBottom release];
     [_tissueTop release];
     [_tissueButtom release];
-    [_bug release];
+        [_bug release];
     [_plate release];
     [super dealloc];
 }
