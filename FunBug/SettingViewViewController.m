@@ -31,6 +31,7 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     //do nothing
+    NSLog(@"setting touches began");
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

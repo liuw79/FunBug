@@ -16,37 +16,18 @@
 @property (retain, nonatomic) IBOutlet UIImageView *doorBottom;
 @property (retain, nonatomic) IBOutlet UIImageView *tissueTop;
 @property (retain, nonatomic) IBOutlet UIImageView *tissueButtom;
-@property (retain, nonatomic) IBOutlet UIImageView *bug;
 @property (retain, nonatomic) IBOutlet UIImageView *plate;
 @property (retain, nonatomic) NSDictionary *dic;
 
 @property CGPoint *bugOrigionPosition;
 @property CGPoint *bugTargetPosition;
 
-- (void)turnRight;
-- (void)moveRight;
-- (void)turnLeft;
-- (void)moveLeft;
-- (IBAction)restart;
 - (IBAction)setSettings:(id)sender;
+- (void)addBug;
 
 @end
 
 @implementation ViewController
-
-bool bugDead;
-bool ifTurned;
-
--(void)restart
-{
-    [self.bug setAlpha:100];
-    
-    bugDead = NO;
-    ifTurned = NO;
-
-    NSLog(@"Restart butten pressed.");
-    NSLog(@"bug pointer %p", self.bug);
-}
 
 -(void)setSettings:(id)sender
 {
@@ -59,145 +40,16 @@ bool ifTurned;
     settingController = nil;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)bePressed:(Bug *)bug
 {
-    UITouch *touch = [touches anyObject];
-    CGPoint touchPoint = [touch locationInView:self.view];
-    CGRect bugFrame = [[[self.bug layer] presentationLayer] frame];
-    
-    if (CGRectContainsPoint(bugFrame, touchPoint)) {
-        bugDead = YES;
-        
-        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"beetle_dead" ofType:@"mp3"];
-        NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
-        SystemSoundID soundID;
-        OSStatus err = AudioServicesCreateSystemSoundID((CFURLRef)soundURL, &soundID);
-        if (err) {
-            NSLog(@"sound err");
-            return;
-        }
-        AudioServicesAddSystemSoundCompletion(soundID, NULL, NULL, SoundFinished, nil);
-        AudioServicesPlaySystemSound(soundID);
-        
-        [UIView animateWithDuration:0.3
-                              delay:0.0
-                            options:(UIViewAnimationCurveEaseOut)
-                         animations:^{
-                             [self.bug setAlpha:0];
-                         }
-                         completion:^(BOOL finished) {
-                         }];
-    }
-}
-
-/*****************当音频播放完毕调用这个函数释放资源，避免内存泄露*******************/
-static void SoundFinished(SystemSoundID soundID,void* sample){
-    /*播放全部结束，因此释放所有资源 */
-    AudioServicesDisposeSystemSoundID(soundID);
-}
-
-- (void)turnRight
-{
-    NSLog(@"turn Right began.");
-    if (bugDead) {
-        return;
-    }
-    
-    [UIView animateWithDuration:0.5
-                          delay:1.5
-                        options:(UIViewAnimationCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction)
-                     animations:^{
-                         [UIView setAnimationDelegate:self];
-                         [UIView setAnimationDidStopSelector:@selector(moveRight)];
-                         self.bug.transform = CGAffineTransformMakeRotation(M_PI);
-                     }
-                     completion:^(BOOL finished) {
-                         NSLog(@"finished turn right");
-                     }];
-}
-
-- (void)moveRight
-{
-    NSLog(@"move Right began.");
-    NSLog(@"position x:%f, y:%f.", self.bug.frame.origin.x, self.bug.frame.origin.y);
-    NSLog(@"bugDead:%d", bugDead);
-    
-    if (bugDead) {
-        return;
-    }
-    
-    
-    CGRect rightFrame = CGRectMake([[self.dic objectForKey:@"rightX"] floatValue],
-                                   [[self.dic objectForKey:@"rightY"] floatValue], 84, 86);
-    
-    [UIView animateWithDuration:1.0
-                          delay:0.5
-                        options:(UIViewAnimationCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction)
-                     animations:^{
-                         [UIView setAnimationDelegate:self];
-                         [UIView setAnimationDidStopSelector:@selector(turnLeft)];
-                         [self.bug setFrame:rightFrame];
-                     }
-                     completion:^(BOOL finished) {
-                         NSLog(@"finished turn right");
-                     }];
-}
-
-- (void)turnLeft
-{
-    NSLog(@"turn left began.");
-    if (bugDead) {
-        return;
-    }
-    
-    [UIView animateWithDuration:0.5
-                          delay:0.5
-                        options:(UIViewAnimationCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction)
-                     animations:^{
-                         [UIView setAnimationDelegate:self];
-                         [UIView setAnimationDidStopSelector:@selector(moveLeft)];
-                         self.bug.transform = CGAffineTransformMakeRotation(0);
-                     }
-                     completion:^(BOOL finished) {
-                         NSLog(@"finished turn right");
-                     }];
-}
-
--(void)moveLeft
-{
-    NSLog(@"move left began.");
-    if (bugDead) {
-        return;
-    }
-    
-    CGRect leftFrame = CGRectMake([[self.dic objectForKey:@"leftX"] floatValue],
-                                  [[self.dic objectForKey:@"leftY"] floatValue], 84, 86);
-    
-    [UIView animateWithDuration:1.0
-                          delay:0.5
-                        options:(UIViewAnimationCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction)
-                     animations:^{
-                         [UIView setAnimationDelegate:self];
-                         [UIView setAnimationDidStopSelector:@selector(turnRight)];
-                         [self.bug setFrame:leftFrame];
-                     }
-                     completion:^(BOOL finished) {
-                         NSLog(@"finished turn right");
-                     }];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:NO];
-    bugDead = YES;
+    [bug removeFromSuperview];
+    bug = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     NSLog(@"view will appear.");
     self.dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"dicSettings"];
-    
-    bugDead = NO;
     
     CGRect topFrame = self.doorTop.frame;
     topFrame.origin.y = -self.doorTop.frame.size.height;
@@ -230,17 +82,22 @@ static void SoundFinished(SystemSoundID soundID,void* sample){
                      }
                      completion:^(BOOL finished){
                      }];
-    
-    if (!ifTurned) {
-        [self turnRight];
-        ifTurned = YES;
-    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    for (int i = 1; i <= arc4random() % 10; i++) {
+        [self addBug];
+    }
+
+}
+
+- (void)addBug
+{
+    Bug *bug = [[Bug alloc] initWithSuperView:self.view];
+    [self.view addSubview:bug];
 }
 
 - (void)didReceiveMemoryWarning
@@ -254,7 +111,6 @@ static void SoundFinished(SystemSoundID soundID,void* sample){
     [_doorBottom release];
     [_tissueTop release];
     [_tissueButtom release];
-        [_bug release];
     [_plate release];
     [super dealloc];
 }

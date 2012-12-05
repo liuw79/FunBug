@@ -32,6 +32,7 @@
 		01477ED8166B310F00A08D6C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01477ED7166B310F00A08D6C /* AudioToolbox.framework */; };
 		01477EE2166B3AE800A08D6C /* SettingViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01477EE0166B3AE800A08D6C /* SettingViewViewController.m */; };
 		01477EE3166B3AE800A08D6C /* SettingViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01477EE1166B3AE800A08D6C /* SettingViewViewController.xib */; };
+		0190E83A166EF5E2008093CC /* Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 0190E839166EF5E2008093CC /* Bug.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,8 @@
 		01477EDF166B3AE800A08D6C /* SettingViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewViewController.h; sourceTree = "<group>"; };
 		01477EE0166B3AE800A08D6C /* SettingViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewViewController.m; sourceTree = "<group>"; };
 		01477EE1166B3AE800A08D6C /* SettingViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewViewController.xib; sourceTree = "<group>"; };
+		0190E838166EF5E2008093CC /* Bug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bug.h; sourceTree = "<group>"; };
+		0190E839166EF5E2008093CC /* Bug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bug.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				01477EDF166B3AE800A08D6C /* SettingViewViewController.h */,
 				01477EE0166B3AE800A08D6C /* SettingViewViewController.m */,
 				01477EE1166B3AE800A08D6C /* SettingViewViewController.xib */,
+				0190E838166EF5E2008093CC /* Bug.h */,
+				0190E839166EF5E2008093CC /* Bug.m */,
 			);
 			path = FunBug;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				01477EA6166B1C6D00A08D6C /* AppDelegate.m in Sources */,
 				01477EB2166B1C6D00A08D6C /* ViewController.m in Sources */,
 				01477EE2166B3AE800A08D6C /* SettingViewViewController.m in Sources */,
+				0190E83A166EF5E2008093CC /* Bug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Bug.h"
 
 @interface ViewController : UIViewController
+
+- (void)bePressed:(UIView *)bug;  //代理方法
 
 @end

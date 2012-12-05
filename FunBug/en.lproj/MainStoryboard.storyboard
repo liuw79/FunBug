@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,10 +14,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="plate_cheese.png" id="khs-yR-vmL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" image="bug.png" id="ZH2-XG-8Lp">
-                                <rect key="frame" x="57" y="133" width="84" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="fabric_top.png" id="JS3-nY-6MR">
@@ -51,29 +47,12 @@
                                     <action selector="setSettings:" destination="2" eventType="touchUpInside" id="NLw-Gj-0aT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2AI-Lw-SU5">
-                                <rect key="frame" x="20" y="404" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" image="1262b33239f1cb04e6279691783aa155.jpg">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="restart" destination="2" eventType="touchUpInside" id="VSH-n5-lZW"/>
-                                    <action selector="viewWillAppear:" destination="2" eventType="touchUpInside" id="zuM-Cz-x53"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Pb6-HK-Ztw"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="bug" destination="ZH2-XG-8Lp" id="9K9-cX-FcU"/>
                         <outlet property="doorBottom" destination="PV8-qI-MAX" id="zaH-yO-hpf"/>
                         <outlet property="doorTop" destination="AQY-n5-S9l" id="yjb-rg-0pw"/>
                         <outlet property="plate" destination="khs-yR-vmL" id="zTK-rO-AMy"/>
@@ -87,8 +66,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1262b33239f1cb04e6279691783aa155.jpg" width="128" height="128"/>
-        <image name="bug.png" width="90" height="95"/>
         <image name="door_bottom.png" width="320" height="235"/>
         <image name="door_top.png" width="320" height="266"/>
         <image name="fabric_bottom.png" width="320" height="235"/>
@@ -96,21 +73,6 @@
         <image name="plate_cheese.png" width="320" height="480"/>
         <image name="setting.png" width="40" height="39"/>
     </resources>
-    <classes>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="restart"/>
-                <relationship kind="action" name="setSettings:"/>
-                <relationship kind="outlet" name="bug" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="doorBottom" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="doorTop" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="plate" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tissueButtom" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tissueTop" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
