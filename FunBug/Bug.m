@@ -14,7 +14,7 @@
 
 - (id)initWithSuperView:(ViewController *)superView
 {
-    UIImage *bugImage = [UIImage imageNamed:@"bug.png"];
+    UIImage *bugImage = [UIImage imageNamed:@"bug.png"]; //000
     
     self = [super initWithImage:bugImage];
     if (self) {
